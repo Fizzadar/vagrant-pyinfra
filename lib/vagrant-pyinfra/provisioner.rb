@@ -14,10 +14,15 @@ module Vagrant
                 end
 
                 pyinfra_command = (
-                    "pyinfra -i #{host} #{config.deploy_file} " +
-                    "--key #{private_key} --user #{user} --port #{port}"
+                    "pyinfra " +
+                    "-i #{host} " +
+                    "--key #{private_key} " +
+                    "--port #{port} " +
+                    "--user #{user} " +
+                    "#{config.deploy_file}"
                 )
 
+                puts "Running: #{pyinfra_command}"
                 system pyinfra_command
             end
         end
