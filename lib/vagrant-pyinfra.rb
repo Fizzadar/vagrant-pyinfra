@@ -1,5 +1,3 @@
-require 'bundler'
-
 begin
     require 'vagrant'
 rescue LoadError
